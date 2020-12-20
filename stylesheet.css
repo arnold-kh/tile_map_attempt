@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", serif;
+}
+
+.map {
+    top: 43px;
+    position: relative;
+    width: 1000px;
+    height: 700px;
+}
+
+.region {
+    position: absolute;
+    top: 43px;
+    left: 86px;
+    padding: 1px 1px 1px 2px;
+    min-width: 43px;
+    max-width: 43px;
+    min-height: 43px;
+    max-height: 43px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.region.region_spb {
+    top: 86px;
+    left: 43px;
+}
+
+.region.region_sml {
+    top: 43px;
+    left: 129px;
+}
+
+.region_empty .region__name {
+    color: gray;
+}
+
+.region__dots {
+    margin-top: 3px;
+    display: flex;
+}
+
+.region__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-left: 2px;
+}
+
+.region__dot:first-child {
+    margin-left: 0;
+}
+
+.region__dot.region__dot_attack {
+    border: 0.5px solid #ff0000;
+}
+
+.region__dot.region__dot_attack-with-victims {
+    background-color: red;
+}
+
+.region__dot.region__dot_prevented {
+    background-color: blue;
+}
+
+
+.popup-overlay {
+    /*Hides pop-up when there is no "active" class*/
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #450e0e;
+    width: 200px;
+    height: 200px;
+    left: 550px;
+    top: 100px
+}
+
+.popup-overlay.active {
+    /*displays pop-up when "active" class is present*/
+    visibility: visible;
+    text-align: center;
+}
+
+.popup-content {
+    /*Hides pop-up content when there is no "active" class */
+    visibility: hidden;
+}
+
+.popup-content.active {
+    /*Shows pop-up content when "active" class is present */
+    visibility: visible;
+}
+
+button {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 30px;
+    margin: .20rem;
+    font-size: 1rem;
+    color: #666666;
+    background: #ffffff;
+    border: 1px solid #666666;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid #666666;
+    background: #666666;
+    color: #ffffff;
+}
