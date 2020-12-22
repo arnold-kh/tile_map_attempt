@@ -118,22 +118,25 @@ for (let tile of tiles) {
             $(".popup-overlay, .popup-content").css("left", (tile.col * 43) + 'px')
             $(".close, .popup-overlay").removeClass("active")
         })
-
         .removeClass('region_model')
         .appendTo(".map");
 
     regionEl.find('.region__name')
         .text(tile.name);
 
-    // regionEl.find('.region__dots')
-    //     .append($(".region__dot.region__dot_attack.model").clone()
-    //         .removeClass("model"))
+    if (tile.attacks) {
+        for (let i = 0; i < tile.attacks; i++) {
+            let dotEl = regionEl.find(".region__dot.region__dot_attack.model")
+                .clone()
+                .removeClass('model');
+            regionEl.find('.region__dots')
+                .append(dotEl);
+        }
+    }
 
-$(".close, .popup-overlay").on("click", function () {
-    $(".popup-overlay, .popup-content").removeClass("active");
-});
-
-
+    $(".close, .popup-overlay").on("click", function () {
+        $(".popup-overlay, .popup-content").removeClass("active");
+    });
 
 
     //как прикрепить к элементу
